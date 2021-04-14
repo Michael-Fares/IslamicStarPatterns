@@ -449,7 +449,7 @@ const RandomPattern = () => {
   const oldCanvas = document.querySelector('canvas')
   oldCanvas.remove() 
 
-  arrayOfFunctions[[Math.floor(random(1, 5))-1]]()
+  arrayOfFunctions[[Math.floor(random(1, 6))-1]]()
 }
 
 
