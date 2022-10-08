@@ -5,7 +5,7 @@ window.onload = () => { generatePattern(  options ) }
 
 // hard coded options object to be manipulated by DOM and passed into patern generator fuction
 let options = {
-  scale: 4,
+  scale: 5,
   lineWidth: 1,
   background: '#101010',
   lineColor: '#98ded9',
@@ -54,7 +54,7 @@ const generatePattern = (options) => {
   const mainCanvas = document.createElement('canvas');
   const ctx = mainCanvas.getContext('2d');
   // might include these in options later
-  mainCanvas.width = 1600;
+  mainCanvas.width = window.innerWidth;
   mainCanvas.height = 1600;      
   const tesslation = ctx.createPattern(tile, 'repeat');
   ctx.fillStyle = tesslation;
