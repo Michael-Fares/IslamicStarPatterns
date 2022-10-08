@@ -11,24 +11,4 @@ h1 {
 h1, p {
   padding: 0 20px 0 20px;
 }
-.container {
-  display: flex;
-  flex-direction: column;
-}
-button {
-  margin: 1% 33% 2% 33%;
-  font-size: 20px;
-  color: white;
-  border: none;
-  padding: 1%;
-  background-color: black;
-  transition: ease 0.5s all
-}
-button:hover {
-  color: black;
-  background-color: white;
-}
-button:active {
-  color: black;
-  background-color: green;
-}
+
