@@ -1,134 +1,137 @@
-const PATTERN_SIMPLE = [
+const PATTERN_SIMPLE = {
+    tileSideLength: 32,
+    coords: [
     {
-        action: 'move',
+        isMove: true,
         x: 0,
         y: 12
     },
     {
-        action: 'line',
+        isMove: false,
         x: 8,
         y: 20
     },
     {
-        action: 'line',
+        isMove: false,
         x: 8,
+        y: 28
+    },
+    {
+        isMove: false,
+        x: 12,
+        y: 32
+    },
+    {
+        isMove: false,
+        x: 20,
+        y: 24
+    },
+    {
+        isMove: false,
+        x: 28,
+        y: 24
+    },
+    {
+        isMove: false,
+        x: 32,
         y: 20
     },
     {
-        action: 'line',
-        x: 8,
-        y: 20
+        isMove: false,
+        x: 24,
+        y: 12
     },
     {
-        action: 'line',
-        x: 8,
-        y: 20
+        isMove: false,
+        x: 24,
+        y: 4
     },
     {
-        action: 'line',
-        x: 8,
-        y: 20
+        isMove: false,
+        x: 20,
+        y: 0
     },
     {
-        action: 'line',
-        x: 8,
-        y: 20
+        isMove: false,
+        x: 12,
+        y: 8
     },
     {
-        action: 'line',
-        x: 8,
-        y: 20
+        isMove: false,
+        x: 4,
+        y: 8
     },
     {
-        action: 'line',
-        x: 8,
-        y: 20
+        isMove: false,
+        x: 0,
+        y: 12
     },
     {
-        action: 'line',
-        x: 8,
-        y: 20
-    },
-    {
-        action: 'line',
-        x: 8,
-        y: 20
-    },
-    {
-        action: 'line',
-        x: 8,
-        y: 20
-    },
-    {
-        action: 'line',
-        x: 8,
-        y: 20
-    },
-    {
-        action: 'move',
+        isMove: true,
         x: 0,
         y: 20
     },
     {
-        action: 'line',
+        isMove: false,
         x: 4,
         y: 24
     },
     {
-        action: 'line',
+        isMove: false,
         x: 12,
         y: 24
     },
     {
-        action: 'line',
+        isMove: false,
         x: 20,
         y: 32
     },
     {
-        action: 'line',
+        isMove: false,
         x: 24,
         y: 28
     },
     {
-        action: 'line',
+        isMove: false,
         x: 24,
         y: 20
     },
     {
-        action: 'line',
+        isMove: false,
         x: 32,
         y: 12
     },
     {
-        action: 'line',
+        isMove: false,
         x: 28,
         y: 8
     },
     {
-        action: 'line',
+        isMove: false,
         x: 20,
         y: 8
     },
     {
-        action: 'line',
+        isMove: false,
         x: 12,
         y: 0
     },
     {
-        action: 'line',
+        isMove: false,
         x: 8,
         y: 4
     },
     {
-        action: 'line',
+        isMove: false,
         x: 8,
         y: 12
     },
     {
-        action: 'line',
+        isMove: false,
         x: 0,
         y: 20
     }
 ]
+}
 
 export default PATTERN_SIMPLE;

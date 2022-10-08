@@ -5,74 +5,55 @@ window.onload = () => { generatePattern(  options ) }
 
 // hard coded options object to be manipulated by DOM and passed into patern generator fuction
 let options = {
-  scale: 5,
-  background: '#000000',
-  lineColor: '#ffffff',
-  lineWidth: 2,
+  scale: 4,
+  lineWidth: 1,
+  background: '#101010',
+  lineColor: '#98ded9',
   pattern: PATTERN_SIMPLE
 }
 
-const generatePattern = ( options  ) => {
+const generatePattern = (options) => {
   // destructure the options object
   const { 
-    scale, 
+    scale,
+    lineWidth, 
     background,
     lineColor,
-    lineWidth,
     pattern 
   } = options;
-        // Initialise an empty canvas and place it on the page
-        const tile = document.createElement("canvas");
-        const context = tile.getContext("2d");
-        context.fillStyle = background;
-        tile.width = 32;
-        tile.height = 32;
-        
-        
-   
-        // Fill the canvas with a black background to show where it is
-   context.fillRect(0, 0, tile.width, tile.height);
-        
-context.beginPath();
 
-for(let point of pattern) {
-  // generate the pattern
-}
+  // Initialise an empty canvas and place it on the page
+  const tile = document.createElement("canvas");
+  const context = tile.getContext("2d");
+  // scale the tile to the side length of the pattern
+  tile.width = pattern.tileSideLength * scale;
+  tile.height = pattern.tileSideLength * scale;
+  // fill the tile with the specified background color
+  context.fillStyle = background;           
+    // Fill the canvas with a black background to show where it is
+  context.fillRect(0, 0, tile.width, tile.height);
+  // being the drawing path      
+  context.beginPath();
 
-context.moveTo(0, 12);
-context.lineTo(8, 20);
-context.lineTo(8, 28);
-context.lineTo(12, 32);
-context.lineTo(20, 24);
-context.lineTo(28, 24);
-context.lineTo(32, 20);
-context.lineTo(24, 12);
-context.lineTo(24, 4);
-context.lineTo(20, 0);
-context.lineTo(12, 8);
-context.lineTo(4, 8);
-context.lineTo(0, 12);
+  // map over the coords of the pattern to draw it on the tile
 
-context.moveTo(0, 20);
-context.lineTo(4, 24);
-context.lineTo(12, 24);
-context.lineTo(20, 32);
-context.lineTo(24, 28);
-context.lineTo(24, 20);
-context.lineTo(32, 12);
-context.lineTo(28, 8);
-context.lineTo(20, 8);
-context.lineTo(12, 0);
-context.lineTo(8, 4);
-context.lineTo(8, 12);
-context.lineTo(0, 20);
+  pattern.coords.forEach(point => {
+    const { isMove, x, y } = point
+    let x_final = x * scale
+    let y_final = y * scale
+    isMove ? context.moveTo(x_final,y_final) : context.lineTo(x_final,y_final)
+  })
 
+    // set lineWidth to options.lineWidth
     context.lineWidth = lineWidth;
-    // set line color
+    // set line color to options.lineColor
     context.strokeStyle = lineColor;
+    // draw
     context.stroke();
-        const mainCanvas = document.createElement('canvas');
+  
+  const mainCanvas = document.createElement('canvas');
   const ctx = mainCanvas.getContext('2d');
+  // might include these in options later
   mainCanvas.width = 1600;
   mainCanvas.height = 1600;      
   const tesslation = ctx.createPattern(tile, 'repeat');
@@ -83,7 +64,18 @@ context.lineTo(0, 20);
   document.body.appendChild(mainCanvas);
 };
 
-
+const controls = Object.keys(options)
+controls.forEach(control => {
+  const el = document.getElementById(control)
+  console.log(el)
+  el.addEventListener('change', (e) => {
+    options[control] = e.target.value
+    // remove the old canvas before a re-draw
+    const oldCanvas = document.querySelector('canvas')
+      oldCanvas.remove() 
+    generatePattern(options)
+  })
+})
 
 
 
