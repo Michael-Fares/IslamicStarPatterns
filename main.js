@@ -1,18 +1,42 @@
-import PATTERN_SIMPLE from './patterns/pattern1.js';
+import patterns from './utils/exportPatterns.js'
 
 // Create our primary canvas and fill it with the pattern
 window.onload = () => { generatePattern(  options ) }
 
+// handle pattern select
+const select = document.getElementById('pattern')
+const option = select.options[select.selectedIndex].value
+
+
 // hard coded options object to be manipulated by DOM and passed into patern generator fuction
+// except for pattern which is the value of the select to start out
+// need to fully MVC this
 let options = {
   scale: 5,
-  lineWidth: 1,
-  background: '#101010',
-  lineColor: '#98ded9',
-  pattern: PATTERN_SIMPLE
+  lineWidth: 2,
+  background: '#000000',
+  lineColor: '#ffffff',
+  pattern: patterns[option]
 }
 
-const generatePattern = (options) => {
+const controls = Object.keys(options)
+controls.forEach(control => {
+  const el = document.getElementById(control)
+
+  el.addEventListener('change', (e) => {
+    console.log(el, e.target.value)
+    control === 'pattern' ? options[control] = patterns[e.target.value] : options[control] = e.target.value
+    // remove the old canvas before a re-draw
+    const oldCanvas = document.querySelector('canvas')
+      if(oldCanvas) oldCanvas.remove() 
+    generatePattern(options)
+  })
+})
+
+// generate pattern function:
+
+
+function generatePattern(options) {
   // destructure the options object
   const { 
     scale,
@@ -44,6 +68,9 @@ const generatePattern = (options) => {
     isMove ? context.moveTo(x_final,y_final) : context.lineTo(x_final,y_final)
   })
 
+          
+
+
     // set lineWidth to options.lineWidth
     context.lineWidth = lineWidth;
     // set line color to options.lineColor
@@ -63,20 +90,6 @@ const generatePattern = (options) => {
   // Add our primary canvas to the webpage
   document.body.appendChild(mainCanvas);
 };
-
-const controls = Object.keys(options)
-controls.forEach(control => {
-  const el = document.getElementById(control)
-  console.log(el)
-  el.addEventListener('change', (e) => {
-    options[control] = e.target.value
-    // remove the old canvas before a re-draw
-    const oldCanvas = document.querySelector('canvas')
-      oldCanvas.remove() 
-    generatePattern(options)
-  })
-})
-
 
 
 
