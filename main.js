@@ -14,8 +14,8 @@ const option = select.options[select.selectedIndex].value
 // need to fully MVC this
 let options = {
   scale: 5,
-  lineWidth: 2,
-  background: '#000000',
+  lineWidth: 3,
+  background: '#3C2317',
   lineColor: '#ffffff',
   pattern: patterns[option]
 }

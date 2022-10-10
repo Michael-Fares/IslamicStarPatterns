@@ -1,5 +1,6 @@
 const PATTERN_SIMPLE = {
-    tileSideLength: 32,
+    tileHeight: 32,
+    tileWidth: 32,
     coords: [
     {
         isMove: true,

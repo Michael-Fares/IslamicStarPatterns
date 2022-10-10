@@ -1,62 +1,74 @@
+"moveTo(0,160)",
+"lineTo(0,80)",
+"lineTo(20,60)",
+"lineTo(100,60)",
+"lineTo(160,140)",
+"lineTo(200,140)",
+"lineTo(200,180)",
+"lineTo(280,240)",
+"lineTo(280,320)",
+"lineTo(260,340)",
+"lineTo(180,340)",
+"lineTo(120,260)",
+"lineTo(80,260)",
+"lineTo(80,220)",
+"lineTo(0,160)",
 
+"moveTo(0,120)",
+"lineTo(80,140)",
+"lineTo(120,140)",
+"lineTo(180,60)",
+"lineTo(260,60)",
+"lineTo(280,80)",
+"lineTo(280,160)",
+"lineTo(200,220)",
+"lineTo(200,260)",
+"lineTo(160,260)",
+"lineTo(100,340)",
+"lineTo(20,340)",
+"lineTo(0,320)",
+"lineTo(0,240)",
+"lineTo(80,180)",
+"lineTo(80,140)",
 
+//drawing the inner pedals
 
+"moveTo(80,140)",
+"lineTo(60,60)",
+"lineTo(60,20)",
+"lineTo(80,0)",
+"lineTo(120,40)",
+"lineTo(160,40)",
+"lineTo(200,0)",
+"lineTo(220,20)",
+"lineTo(220,60)",
+"lineTo(200,140)",
+"lineTo(280,120)",
+"lineTo(280,160)",
 
+"moveTo(0,280)",
+"lineTo(80,260)",
+"lineTo(60,340)",
+"lineTo(60,380)",
+"lineTo(80,400)",
+"lineTo(120,360)",
+"lineTo(160,360)",
+"lineTo(200,400)",
+"lineTo(220,380)",
+"lineTo(220,340)",
+"lineTo(200,260)",
+"lineTo(280,280)",
 
+// last ornamentations
 
+"moveTo(100,60)",
+"lineTo(120,40)",
 
+"moveTo(180,60)",
+"lineTo(160,40)",
 
-   
-   
+"moveTo(100,340)",
+"lineTo(120,360)",
 
-   context.lineTo(177, 57)
-   context.lineTo(355, 240)
-   context.lineTo(608, 240)
-   context.lineTo(640, 320)
-   context.lineTo(608, 400)
-   context.lineTo(355, 400)
-   context.lineTo(177, 583)
-   context.lineTo(0, 510)
-
-
-
-
-   
-   
-   context.moveTo(0, 320)
-
-   context.lineTo(32, 240)
-   context.lineTo(285, 240)
-   context.lineTo(463, 57)
-   context.lineTo(640, 130)
-   
-    context.moveTo(0, 320)
-
-   context.lineTo(32, 400)
-   context.lineTo(285, 400)
-   context.lineTo(463, 583)
-   context.lineTo(640, 510)
-   
-    context.moveTo(0, 510)
-
-
-
-
-
-
-
-
-   context.lineTo(177, 583)
-   context.lineTo(355, 400)
-   
-   context.moveTo(130, 640)
-
-   context.lineTo(57, 463)
-   context.lineTo(240, 285)
-   
-    context.moveTo(510, 640)
-
-   context.lineTo(583, 463)
-   context.lineTo(400, 285)
-   context.lineTo(400, 32)
-   context.lineTo(320, 0)
+"moveTo(180,340)",
+"lineTo(160,360)"

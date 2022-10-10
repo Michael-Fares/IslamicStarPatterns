@@ -12,8 +12,8 @@ const generatePattern = (options) => {
     const tile = document.createElement("canvas");
     const context = tile.getContext("2d");
     // scale the tile to the side length of the pattern
-    tile.width = pattern.tileSideLength * scale;
-    tile.height = pattern.tileSideLength * scale;
+    tile.width = pattern.tileWidth * scale;
+    tile.height = pattern.tileHeight * scale;
     // fill the tile with the specified background color
     context.fillStyle = background;           
       // Fill the canvas with a black background to show where it is
